@@ -43,7 +43,7 @@ Aplikasi Reimbursement menggunakan **Laravel 11** (Backend) dan **Vue 3** (Front
     - Employee bisa update data yang sudah dibuat dan bisa hapus, sebelum di approve atau di reject oleh manager 
     - Employee bisa lihat list data reimbursement, yang milik sendiri 
     - Ketika submit remiburse, system akan hitung total amount reimburse pada kategori yang dipilh, pada bulan saat submit, yang sudah statusnya sudah di approve, jika nilai amount reimburse lebih besar, dari nilai limit per bulan, pada kategori yang di pilh, dikurangi total amount yang sudah di approve selama satu bulan, maka akan gagal
-    - Admin bisa melihat semua list data riembursement baik yang sudah dihapus atau tidak
+    - Admin bisa melihat semua list data riembursement baik yang sudah dihapus atau tidak (yang sudah dihapus diberi tanda merah pada text nya)
     - Manager bisa lihat semua list reimbursement dan bisa approve/reject
     - Manager akan gagal approve, jika amount reimburse melebihi amount limit kategori reimburse, dikurangi total amount yang sudah di approve selama satu bulan tersebut
     - Fitur CRUD kategori hanya akan muncul ketika login sebagai admin
@@ -53,17 +53,19 @@ Aplikasi Reimbursement menggunakan **Laravel 11** (Backend) dan **Vue 3** (Front
     - git clone https://github.com/waloeh/arcainternational.git
 
 1. **Di Sisi Backend**
-    - masuk ke direktori backend
+    - masuk ke direktori arcainternational\backend
     - composer install
+    - rename file .env.example menjadi .env
     - php artisan key:generate
-    - php artisan queue:table
+    - buat nama database di mysql dengan nama reimbursement_db
     - php artisan migrate
     - php artisan db:seed
-    - php artisan queue:work
+    - php artisan storage:link 
     - php artisan serve
+    - buka terminal baru dan jalankan php artisan queue:work
 
 2. **Di sisi Frontend**
-    - masuk ke direktori frontend
+    - masuk ke direktori arcainternational\frontend
     - npm install
     - npm run dev
 

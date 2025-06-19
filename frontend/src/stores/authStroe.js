@@ -25,7 +25,7 @@ export const useAuthStore = defineStore('auth', {
                 this.token = token
                 this.user = user
             } catch (err) {
-                this.error = err.response?.data?.message || 'Login gagal'
+                this.error = err.response?.data?.message || 'Not connection to database'
             }
         },
 
