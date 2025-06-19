@@ -57,7 +57,7 @@ Aplikasi Reimbursement menggunakan **Laravel 11** (Backend) dan **Vue 3** (Front
     - composer install
     - rename file .env.example menjadi .env
     - php artisan key:generate
-    - buat nama database di mysql dengan nama reimbursement_db
+    - buat database baru di mysql dengan nama reimbursement_db
     - php artisan migrate
     - php artisan db:seed
     - php artisan storage:link 
